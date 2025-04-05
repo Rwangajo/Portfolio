@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>UI/UX Designer</p>
+                <h1>Hi I'm <span>Jonathan</span><br>Rwangabwoba<br> from Rwanda</h1>
+            </div>
+        </div>
+    </div>
+    <!----------------about----------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>My name is Jonathan Iradukunda Rwangabwoba. I am a risk-taker who thrives in dynamic
+                        environments, balancing multiple
+                        tasks efficiently. My background includes hands-on experience in software engineering,
+                        problem-solving, and adapting to
+                        new technologies quickly. My top skills include logical thinking, adaptability, and strong
+                        collaboration. These
+                        strengths allow me to tackle challenges effectively and contribute meaningfully to any team. I
+                        bring value by ensuring
+                        efficient problem resolution, improving workflow processes, and driving innovation. If you’re
+                        looking for a versatile
+                        software engineer who learns fast and delivers results, let’s connect. I’d love to discuss how I
+                        can contribute to your
+                        team’s success.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web/App Development</li>
+                            <li><span>App Development</span><br>Building Android/IOS apps </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2025 - Current</span><br>Professional Foundations</li>
+                            <li><span>2023 - 2024</span><br>Digital Intelligence Training</li>
+                            <li><span>2022-2023</span><br>Software Engineering Foundations </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2025 - Current</span><br>BackEnd Software Engineering</li>
+                            <li><span>2023-2024</span><br>Heavy Equipment Service Technician</li>
+                            <li><span>2022-2023</span><br>Software Engineering Foundations </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            // Remove the "active-link" class from all tablinks
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            // Remove the "active-tab" class from all tabcontents
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            // Add the "active-link" class to the clicked tablink
+            var clickedTab = document.querySelector(`.tab-links[onclick*="${tabname}"]`);
+            clickedTab.classList.add("active-link");
+
+            // Display the content corresponding to the clicked tab
+            var activeTabContent = document.getElementById(tabname);
+            activeTabContent.classList.add("active-tab");
+        }
+    </script>
+</body>
+
+</html>
